@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { v4 as uuid } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import SubmitButton from './SubmitButton';
 import Todos from "./Todos";
 
@@ -7,20 +7,30 @@ class List extends Component {
     constructor(props) {
         super(props);
         this.createTodo=this.createTodo.bind(this);
+        this.deleteTodo=this.deleteTodo.bind(this);
     }
     state = {
-        tasks: ["task placeholder"] 
+        todos: [{task: "my placeholder task"}] 
       }
-      
+
         createTodo(newTodo) {
             this.setState({
-                tasks: [...this.state.tasks, newTodo]
+            todos: [...this.state.todos, newTodo]
             });
+            console.log(this.state.todos)
         }
 
-    render() { 
-        const tasks = this.state.tasks.map(task => {
-            return <Todos task={task}/>})
+        deleteTodo(id) {
+            console.log(id)
+            this.setState({
+                todos: this.state.todos.filter(tasks => tasks.id !== id )})
+        }
+
+
+        render() { 
+        const tasks = this.state.todos.map(todo => {
+            return <Todos deleteTodo={this.deleteTodo} task={todo.task} id={todo.id}/>})
+
 
         return (
         <div>
