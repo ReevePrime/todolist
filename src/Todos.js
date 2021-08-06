@@ -20,10 +20,16 @@ class Todos extends Component {
         this.props.deleteTodo(this.props.id);
     }
 
+    
     render() {
-
-        return <li className={this.state.active ? "Todos-items": null}  onClick={this.handleClick}>{this.props.task} <button onClick={this.handleDelete}>Delete</button></li>
-    }
+        console.log(this.props.stateLength);
+        return (
+                this.props.stateLength === 1 && this.props.task == "" ? <div className="emptylist">Your task list is empty</div> :
+            <li 
+        className={this.state.active ? "Todos-items": null}  
+        onClick={this.handleClick}>{this.props.task} 
+            {this.props.task == "" ? null : <button onClick={this.handleDelete}>Delete</button>}</li>
+    )}
 }
  
 export default Todos;

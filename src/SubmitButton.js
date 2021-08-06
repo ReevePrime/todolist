@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import "./SubmitButton.css";
 
 class SubmitButton extends Component {
     constructor(props){
@@ -25,8 +26,14 @@ class SubmitButton extends Component {
         return ( 
         <div className="Form-container">
            <form onSubmit={this.submitHandle} action="">
-                <label htmlFor="newtask">New Todo</label>
-                <input type="text" value={this.state.task} name="task" onChange={this.handleChange} required id="newtask" placeholder="form"/>
+                <label htmlFor="newtask"></label>
+                <input type="text" 
+                value={this.state.task} 
+                name="task" 
+                onChange={this.handleChange} 
+                required 
+                id="newtask" 
+                placeholder="Enter new task"/>
             </form>
             <button className="Submit-btn" onClick={this.submitHandle}>Submit</button>
         </div> );
