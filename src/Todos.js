@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import "./Todos.css";
 import Button from 'react-bootstrap/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 class Todos extends Component {
     constructor(props) {
@@ -56,8 +59,8 @@ class Todos extends Component {
                             >{this.props.task} 
             {this.props.task === "" ? null : 
                 <span>
-                    <Button size="sm" variant="outline-secondary" onClick={this.handleEdit}>Edit</Button>
-                    <Button size="sm" variant="outline-danger" onClick={this.handleDelete}>Delete</Button>
+                    <Button size="sm" variant="outline-secondary" onClick={this.handleEdit}><FontAwesomeIcon icon={faPen} /></Button>
+                    <Button size="sm" variant="outline-danger" onClick={this.handleDelete}><FontAwesomeIcon icon={faTrashAlt} /></Button>
                     </span>}</li>
     )}
 }

@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import "./SubmitButton.css";
 import Button from 'react-bootstrap/Button';
 
+
 class SubmitButton extends Component {
     constructor(props){
     super(props);
@@ -37,6 +38,7 @@ class SubmitButton extends Component {
                 placeholder="Enter new task"/>
             </form>
             <Button variant="primary" className="Submit-btn" size="sm" onClick={this.submitHandle}>Submit</Button>
+            
             
         </div> );
     }
