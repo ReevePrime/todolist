@@ -5,9 +5,12 @@
     padding: 5px;
 }
 
+
+
 .Todos-items {
     color: lightgray;
     text-decoration: line-through;
+    transition: 1s;
 }
 
 .emptylist {

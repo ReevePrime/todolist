@@ -3,6 +3,7 @@ import SubmitButton from './SubmitButton';
 import Todos from "./Todos";
 import "./List.css";
 
+
 class List extends Component {
     constructor(props) {
         super(props);
@@ -37,6 +38,8 @@ class List extends Component {
 
 
         render() { 
+
+            
             // Render all the tasks in the state in separate <li> elements
         const tasks = this.state.todos.map(todo => {
             return <Todos   deleteTodo={this.deleteTodo} 

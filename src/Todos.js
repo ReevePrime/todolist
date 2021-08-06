@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./Todos.css";
+import Button from 'react-bootstrap/Button';
 
 class Todos extends Component {
     constructor(props) {
@@ -39,8 +40,8 @@ class Todos extends Component {
     
     render() {
         return (
-                this.props.stateLength === 1 && this.props.task == "" ? 
-                    <div className="emptylist">Your task list is empty</div> 
+                this.props.stateLength === 1 && this.props.task === "" ? 
+                    <div className="emptylist"><br/>Your task list is empty</div> 
                     : this.state.edit === true ? 
                     <form className="space" onSubmit={this.handleEdit} action="" >
                         <input type="text" 
@@ -51,11 +52,12 @@ class Todos extends Component {
                         </form>
                         : <li 
                             className={this.state.active ? "Todos-items space": "space"}  
-                            onClick={this.handleClick}>{this.props.task} 
-            {this.props.task == "" ? null : 
+                            onClick={this.handleClick}
+                            >{this.props.task} 
+            {this.props.task === "" ? null : 
                 <span>
-                    <button onClick={this.handleEdit}>Edit</button>
-                    <button onClick={this.handleDelete}>Delete</button>
+                    <Button size="sm" variant="outline-secondary" onClick={this.handleEdit}>Edit</Button>
+                    <Button size="sm" variant="outline-danger" onClick={this.handleDelete}>Delete</Button>
                     </span>}</li>
     )}
 }

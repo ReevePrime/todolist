@@ -6,3 +6,19 @@ ul {
 h1 {
     text-align: center;
 }
+
+.container {
+    position: relative;
+    justify-content: center;
+    border-radius: 15px;
+    top: 5vh;
+    padding: 5vh 0;
+    box-shadow: 8px 9px 22px -1px rgba(0,0,0,0.66);
+    background-color: white;
+    display: inline-grid;
+    grid-template-columns: repeat(auto, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto);
+    transition: 2s;
+    box-sizing: border-box;
+    
+}
