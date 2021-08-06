@@ -5,10 +5,14 @@ class Todos extends Component {
     constructor(props) {
     super(props);
     this.state = {
-        active: false
+        active: false,
+        edit: false,
+        task: ""
     }
     this.handleDelete=this.handleDelete.bind(this);
     this.handleClick=this.handleClick.bind(this);
+    this.handleEdit=this.handleEdit.bind(this);
+    this.handleChange=this.handleChange.bind(this);
 }
 
     handleClick() {
@@ -20,15 +24,39 @@ class Todos extends Component {
         this.props.deleteTodo(this.props.id);
     }
 
+    handleChange(e) {
+        this.setState({[e.target.name] : e.target.value})
+    }
+
+    handleEdit(e) {
+        e.stopPropagation();
+        this.setState({task: this.props.task})
+        this.props.updateTodo(this.props.id, this.state.task)
+        const currentState = this.state.edit;
+        this.setState({ edit: !currentState})
+    }
+
     
     render() {
-        console.log(this.props.stateLength);
         return (
-                this.props.stateLength === 1 && this.props.task == "" ? <div className="emptylist">Your task list is empty</div> :
-            <li 
-        className={this.state.active ? "Todos-items": null}  
-        onClick={this.handleClick}>{this.props.task} 
-            {this.props.task == "" ? null : <button onClick={this.handleDelete}>Delete</button>}</li>
+                this.props.stateLength === 1 && this.props.task == "" ? 
+                    <div className="emptylist">Your task list is empty</div> 
+                    : this.state.edit === true ? 
+                    <form className="space" onSubmit={this.handleEdit} action="" >
+                        <input type="text" 
+                        name="task" 
+                        value={this.state.task} 
+                        required
+                        onChange={this.handleChange}/> <button>Submit</button>
+                        </form>
+                        : <li 
+                            className={this.state.active ? "Todos-items space": "space"}  
+                            onClick={this.handleClick}>{this.props.task} 
+            {this.props.task == "" ? null : 
+                <span>
+                    <button onClick={this.handleEdit}>Edit</button>
+                    <button onClick={this.handleDelete}>Delete</button>
+                    </span>}</li>
     )}
 }
  

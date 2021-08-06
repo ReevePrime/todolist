@@ -1,4 +1,4 @@
-li {
+.space {
     display: flex;
     justify-content: space-between;
     list-style: none;
