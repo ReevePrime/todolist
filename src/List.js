@@ -51,11 +51,10 @@ class List extends Component {
 
         return (
         <div className="container">
-            <div className="List-container">
                 <h1>Todo List</h1>
                 <SubmitButton createTodo={this.createTodo}/>
                 <ul>{tasks}</ul>
-            </div>
+
         </div>
         )
     }

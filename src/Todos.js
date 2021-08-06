@@ -58,10 +58,10 @@ class Todos extends Component {
                             onClick={this.handleClick}
                             >{this.props.task} 
             {this.props.task === "" ? null : 
-                <span>
+                <div className="libtn">
                     <Button size="sm" variant="outline-secondary" onClick={this.handleEdit}><FontAwesomeIcon icon={faPen} /></Button>
                     <Button size="sm" variant="outline-danger" onClick={this.handleDelete}><FontAwesomeIcon icon={faTrashAlt} /></Button>
-                    </span>}</li>
+                    </div>}</li>
     )}
 }
  

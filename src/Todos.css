@@ -17,3 +17,8 @@
     text-align: center;
     color: grey;
 }
+
+.libtn {
+    display: flex;
+    height: 2rem; 
+}
