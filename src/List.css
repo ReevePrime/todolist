@@ -17,10 +17,9 @@ h1 {
     box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
-
     border-radius: 15px;
-    margin: 1rem;
-    margin-top: 4rem 4rem 4rem auto;
+    margin: auto;
+    margin-top: 4rem;
     padding: 2rem 3rem 3rem;
     box-shadow: 8px 9px 22px -1px rgba(0,0,0,0.66);
     background-color: white;
