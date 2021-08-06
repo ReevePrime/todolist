@@ -1,0 +1,25 @@
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    width: 30vw;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.Form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.Todos-items {
+    color: lightgray;
+    text-decoration: line-through;
+}

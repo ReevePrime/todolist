@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import SubmitButton from './SubmitButton';
 import Todos from "./Todos";
+import "./List.css";
 
 class List extends Component {
     constructor(props) {
@@ -33,12 +34,13 @@ class List extends Component {
 
 
         return (
-        <div>
-            <h1>Title</h1>
-            <ul>
-                {tasks}
-            </ul>
-            <SubmitButton createTodo={this.createTodo}/>
+        <div className="container">
+            <div className="List-container">
+                <h1>Todo List</h1>
+                <SubmitButton createTodo={this.createTodo}/>
+                    <ul>{tasks}</ul>
+            </div>
+
         </div>
         )
     }
